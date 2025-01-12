@@ -87,3 +87,31 @@ a:hover --> 특정 요소에 마우스가 올라간 상태
 UI요소 상태 셀렉터: 특정 UI 요소 상태에 따른 셀렉터
 ex)
 checkbox checked --> 체크박스에서 선택이 되면 css를 변경
+
+nth-child는 타입이 다른 것도 포함시키므로 원하는 결과를 내지 못할 수 있는데,
+그럴 경우, nth-type을 사용하면 원하는 태그에 css를 적용시킬 수 있다.
+
+정합성 체크 셀렉터
+input --> required : 입력창에 무조건 데이터를 넣어야함
+invalid --> 데이터가 없는 상태
+valid 데이터가 있는 상태
+input --> pattern : 정규표현식의 패턴을 넣음(패턴을 만드는 것은 자바스크립트에서 많이 사용된다.)
+
+가상요소 셀렉터
+first-letter: 요소의 첫 글자 선택
+first-line: 요소의 첫 라인(줄) 선택
+after : 요소의 뒤에 위치하는 공간선택, content 프로퍼티와 함께 사용
+before : 요소의 앞에 위치하는 공간 선택, content 프로퍼티와 함께 사용
+selection : 요소에서 드래그한 부분을 선택
+
+h3::before {
+    content: 'hi',
+    color: blue
+}
+h3태그 앞에 hi라는 컨탠츠가 파란색으로 나타난다.
+
+h3::after{
+    content: 'bye',
+    color: 'yellow'
+}
+h3태그 뒤에 bye 라는 컨텐츠가 노란색으로 나타난다.

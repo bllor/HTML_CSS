@@ -145,3 +145,20 @@ background-attachment: fixed or scroll
 --> fixed를 사용하면 스크롤을 해도 사진이 없어지지 않고 랜더링한 위치에 계속 나와있다.
 
 
+block
+-화면 전체를 차지
+-새로운 줄을 차지
+-내부에 inline이 들어올 수 있음
+-높이, 너비 설정가능
+inline
+-내부에 block이 들어오지 못함
+-높이 너비 설정 불가
+
+display 프로퍼티는 태그의 속성인 block, inline 등을 변경할 때 사용한다.
+inline-block : 인라인 요소와 같이 한 라인에 표현되면서도 width, height등의 프로퍼티 설정가능
+Inline이나 inline-block의 특성을 가진 요소 뒤에 공백(엔터 또는 스페이스)이 있을 경우, 4px(스페이스 한 번)만큼 공간이 띄워진다
+
+visibility프로퍼티 -- 요소를 보이게 할지 안보이게 할지
+visibility:hidden 해당 요소를 보이지 않게 하지만 공간은 남겨둠
+visibility:visible 요소를 보이게 함
+

@@ -263,3 +263,27 @@ css의 우선순위
 그리고 대상을 명확하게 지정할수록 css적용 우선순위가 높아지고, 문서에서 뒤에 나오는 Css일수록 우선순위가 높다.
 만약 !important로 할 경우 바로 우선 순위가 높아지지만 인라인보다는 낮다.
 
+----------------
+적응형 웹 : 사용자가 모바일인지 ,pc인지에 따라 다른 페이지를 보여줌
+반응형 웹 : 동일한 웹페이지를 보여주되, 웹페이지를 보여주는 화면 사이즈에 따라 다르게 보여줌
+
+px로 지정할 경우 해상도에 따라 크기가 달라지는 한계가 있는데, 이를 극복하기 위해 생긴 것이 viewport
+viewport는 화면상의 표시 영역을 의미한다.
+viewport를 설정하는 방법은 <meta name='viewport' content='device-width initial-scale=1.0'>와 같이 사용하며
+device-width는 화면의 넓이를 뜻하고, initial-scale은 초기 화면의 배율을 뜻한다.
+
+
+웹페이지에서 레이아웃이란 각 페이지 구성 요소를 페이지 내에 효과적으로 배열하는 일을 의미한다.
+
+미디어쿼리는 css의 조건식으로 사용이 되며 @media로 사용할 수 있다.
+@media media-type and 조건
+media-type의 종류
+all :   전체
+print : 프린트 화면
+screen : 브라우저 화면
+speech : 음성
+
+조건에는 min-width, max-width, orientation(방향) 정도가 많이 쓰이며, 여러 조건을 사용할 수 있다.
+
+flex를 사용하려고 하면 부모 태그가 있어야 하며, 이 부모태그를 flex container라고 한다.
+

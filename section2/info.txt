@@ -294,3 +294,16 @@ div박스 내 수평정렬text-align:center
 flex-wrap: 아이템을 한줄에 보여줄지 안보여줄지
 flex-wrap: nowrap이 디폴트 값이며 한 줄로 보여준다.
 no-wrap은 넘칠거 같으면 다음줄로 넘기는 것
+
+
+align-item: 교차축을 기반으로 각 행마다 설정을 정할 수 있음
+align-content: 교차축을 기반으로 자식태그들까지 설정을 할 수 있음
+align-self: 하나만 설정할 때 할 수 있음(우선적으로 사용할 때 쓰임)
+
+flex-grow: 태그의 크기를 늘릴 때 사용함
+flex-grow:1 flex-grow:2,flex-grow:1 하나의 div내에 존재한다면
+flex-grow:2 가 화면의 50%를, 나머지가 각각 25%를 차지한다.
+전체화면 == 전체 flex-grow의 수
+개별화면 == flex-grow/전체 flex-grow수
+
+flex-shrink flex-grow의 반대개념으로, 태그의 크기를 줄일 때 사용한다.

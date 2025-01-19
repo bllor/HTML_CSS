@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Spoqa Han Sans Neo", "Sans-serif";
+}
+
+/*
+스포카 폰트를 사용하려면   font-family: "Spoqa Han Sans Neo", "Sans-serif"; 이렇게 써야하군
+앤스캐너에서 다 수정해야겠다.
+*/

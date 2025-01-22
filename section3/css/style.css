@@ -150,6 +150,10 @@ section {
   box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
 }
 
+.skill:hover {
+  transform: translate(0, -5px);
+}
+
 .skill-icon {
   font-size: 2.5rem;
   margin: 0 7px;
@@ -229,7 +233,14 @@ section {
   box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
   border-radius: 8px;
   margin: 0 10px;
+  transition: 0.4s;
 }
+
+.class-card:hover {
+  box-shadow: 10px 10px 10px 0px rgba(25, 42, 70, 0.2);
+  transform: translate(0,-0.5px);
+}
+
 .class-image {
   width: 240px;
   height: 150px;
@@ -279,6 +290,7 @@ section {
 .class-detail {
   font-size: 0.9rem;
   color: #545e6f;
+  line-height: 1.5rem;
 }
 
 /*

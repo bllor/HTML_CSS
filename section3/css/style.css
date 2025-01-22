@@ -234,16 +234,21 @@ section {
   border-radius: 8px;
   margin: 0 10px;
   transition: 0.4s;
+  flex-shrink: 0;
 }
+/*
+인터넷 익스플로어에서는 크기가 유지안될 수 있는데 이를 위해서 flex-shrink와 max-width를 사용한다
+flex-shrink는 카드가 줄어드는 것을 막기 위한 코드
+max-witdh: 카드의 크기가 넘치지 않기 위해 만든 코드
+*/
 
 .class-card:hover {
   box-shadow: 10px 10px 10px 0px rgba(25, 42, 70, 0.2);
-  transform: translate(0,-0.5px);
+  transform: translate(0, -0.5px);
 }
 
 .class-image {
-  width: 240px;
-  height: 150px;
+  max-width: 240px;
   border-radius: 8px 8px 0 0;
 }
 
@@ -291,6 +296,29 @@ section {
   font-size: 0.9rem;
   color: #545e6f;
   line-height: 1.5rem;
+}
+
+footer {
+  border-top: 1px solid #e4e4e4;
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+  margin: 1rme 0;
+}
+
+.footer-message {
+  font-weight: bold;
+  color: #545e6f;
+  margin: 0.4rem 0.5rem;
+}
+
+.footer-contact {
+  color: #545e6f;
+  margin: 0rem 0.5rem;
+}
+
+.footer-copyright {
+  color: #545e6f;
+  margin: 1rem 0.5rem;
 }
 
 /*

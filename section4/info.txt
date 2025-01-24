@@ -166,7 +166,46 @@ let data = [1,2,3];
 let [i1,i2,i3]=data; --> 1,2,3이 할당된다.
 2만가져오고 싶은 경우, Let[,i2,]=data --> I2출력 시 2가 나온다.
 
-let[i1,...i2] =data ...i2에는 변수에 대입되지 않은 나머지 변수들이 들어간다.
+let[i1,...i2] =data ...i2에는 변수에 대입되지 않은 나머지 변수들이 들어간다.5
+
+
+변수값 교환하기
+
+let a = 1;
+let b = 2;
+
+[a,b] = [b,a]; --> console.log(a,b)2,1출력
+
+function getData(...rest){
+    console.log(rest);
+}
+
+let data= [1,2,3,5];
+getData(data)
+--> 1,2,3,5출력
+
+spread 파라미터
+let data= ['b','u','s','a','n']
+console.log(data) --> 'busan'
+
+호이스팅 : 함수(변수)를 선언한 곳보다 함수(변수)가 위에 있더라도 사용할 수 있게 만든 기능
+--> 자바스크립트는 함수나 변수 선언문을 먼저 실행한 다음 코드를 사용하기 때문에 호이스팅이 가능하다.
+
+let a=1;
+let b=2;
+
+Plus(a,b)
+
+
+function Plus(a,b){
+    console.log(a+b)
+}
+
+호이스팅의 해결방안 
+1.let, const를 사용한다.
+2.함수를 선언할 때 함수표현식을 사용한다.
+
+
 
 
 

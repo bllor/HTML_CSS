@@ -205,8 +205,97 @@ function Plus(a,b){
 1.let, const를 사용한다.
 2.함수를 선언할 때 함수표현식을 사용한다.
 
+----------------------------------------------------------------
+scope: js변수 또는 함수 선언 시 , 해당 변수 또는 함수가 유효한 범위
+scope의 종류
+1.전역scope : 코드 전체 범위
+2.function scope: 함수 내에서의 범위 
+3. block scope: {}괄호로 이루어진 블록 내에서의 범위
+
+----------------------------------------------------------------
+동기적 처리와 비동기적 처리
+1.동기적(syncronous): 요청을 보낸 후 , 해당 요청의 응답을 받아야 다음 동작을 실행(코드를 한줄 실행 완료후, 다음 줄 실행)
+2.비동기적(asyncronous): 요청을 보낸 후, 응답과 관계없이 다음 동작을 실행(코드 한줄 실행후, 완료와 상관없이 바로 다음 줄 실행)
+
+비동기적 처리의 이해
+대부분의 프로그래밍 언어는 동기적 처리를 지향하는데, 자바스크립트는 실행이 오래걸린느 동작의 경우 비동기적으로 처리할 수 있는 기능을 제공하고 있다.
+
+비동기처리의 문제점
+비동기처리의 결과값을 받지 않은 채로 다음 코드가 실행되면 전체 코드 실행이 문제가됨
+비동기처리할 때는 axios를 사용한다.
+--> 해결하기 위해서는 콜백함수를 사용하면 된다.
 
 
+주요 비동기적 처리
+1.rest api요청
+2.파일/데이터베이스 처리
+3.타이머, 암호화, 복호화 
+
+setTimeout(function,milliseconds)
+--> milliseconds동안 기다렸다가 function을 실행한다.
+
+
+자바스크립트에서 함수는 first-class function으로
+함수 자체를 변수에 저장이 가능하고, 함수의 인자에 다른 함수를 인수로 전달이 가능하고,함수의 반환값으로 함수를 전달할 수 있다.
+
+
+fuction func1(callback){
+    setTimeout(()=>{
+        console.log('func1')
+        callback();
+    },1000);
+}
+
+function func2(){
+    console.log('func2')
+}
+
+func1(func2)--> func1(func2())이렇게 호출할 경우, func2의 결과값이 func1에 들어간다.
+
+
+promise
+es6에서 공식적으로 추가된 문법으로, 비동기 처리를 위한 콜백함수의 단점을 극복하기 위해 제안되었다.
+
+객체를 생성하고, .then으로 실행이 됨
+프로미스안의 코드는 동기적으로 되고, 코드가 성공 시 resolve, 실패시 reject함수를 실행
+
+promise의 3가지 상태
+1.pending : 비동기처리가 아직 실행되지 않은 상태
+2.fulfilled: 비동기처리가 성공적으로 완료된 상태
+3.rejected: 비동기처리가 실패한 상태
+
+then 내에 함수를 하나만 두면 성공했을 때 해당함수를 실행한다.
+
+then이 여러 개 있는 경우, then이 실행이 안되면 , 그 뒤에 있는 then은 실행되지 않는다.
+
+
+catch메서드
+예외상황을 처리한다.--> then에서 실패시 함수가 정의 되어있지 않으면, then 실패 시 catch내의 코드가 실행된다.
+
+
+promise.then.catch.then 이런 식으로 쓸 수 있는데, 일반적으로 catch는 제일 마지막에 사용된다.
+
+then에 return이 있다면 return값은 다음 then에 인자로 넘어간다.
+
+finally promise가 resolve되든 reject되는지 해당함수는 맨 마지막에 사용이 된다.
+
+then finally, catch가 있을 때 then에서 예외가 생겼을 때
+then,finally,catch순이면 finally먼저 실행하고,catch를 실행하고
+then,catch,finally일 경우 catch, finally순으로 실행된다.
+
+
+promise.all
+동기화 처리할 함수가 여러 개 있는 경우, 함수들이 다 실행된다음 then을 실행
+promiss.all([func1,func2,func3]).then((data)=>{
+    console.log(data);
+})
+-->data는 func1,2,3에서 resolve 내에 들어있는 값이다.
+
+
+race: 여러 함수 중 제일 빠르게 실행완료된 함수만 then구문을 실행
+promise.race([func1,func2]).then((data)=>{
+    console.log(data);
+})
 
 
 --------

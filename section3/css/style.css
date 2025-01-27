@@ -242,9 +242,46 @@ flex-shrink는 카드가 줄어드는 것을 막기 위한 코드
 max-witdh: 카드의 크기가 넘치지 않기 위해 만든 코드
 */
 
-.class-card:hover {
+#backtoTop {
+  background-color: purple;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+
+  border-radius: 20px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition-property: background-color, opacity, visibility;
+  transition-duration: 0.3s, 0.5s, 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+/*
+아이콘 적용방법
+1 ::after (요소 뒤에 content 추가)가상요소에,
+2. content: "폰트어썸 유니코드"를 넣고,
+3. font-family: fontAwesome이라고 넣으면 됨
+*/
+#backtoTop .class-card:hover {
   box-shadow: 10px 10px 10px 0px rgba(25, 42, 70, 0.2);
   transform: translate(0, -0.5px);
+}
+
+#backtoTop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-size: 1.5rem;
+  line-height: 40px;
+  color: #fff;
+}
+
+#backtoTop.show {
+  opacity: 1;
+  visibility: visible;
+  background-color: blue;
 }
 
 .class-image {

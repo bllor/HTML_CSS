@@ -1,0 +1,83 @@
+dom(document object model) document구조화된 데이터
+dom: 구조화된 문서를 객체로 표현하는 방식--> 태그들을 객체로 보는 것
+
+웹브라우저 동작과정
+html가져오기
+html파일을 파싱하여 dom Tree, css정보를 파싱하여 CSSOM Tree생성
+dom/cssom Tree 기반으로 render tree를 만듬
+render tree를 기반으로 rending한다.
+
+js코드를 head 내에 script로 넣으면
+html코드를 기반으로 dom 트리를 구성하기 전에, script를 만나면 js엔진에 제어권을 넘김
+js엔진이 js코드 파일을 로드해서 실행함
+이후에 다시 html로 넘어와서 나머지 html코드를 읽고, dom트리 구성부터 화면에 표시까지를 진행하게 됨
+따라서 head내에 js를 넣게 되면 화면 로딩이 느려지고 dom tree 구성 전에 js가 실행되므로, dom을 조작하는 js는 에러가 나거나 정상실행이 되지 않을 수 있다.
+그러므로 js코든ㄴ </body>태그 직전에 script태그로 추가해야함
+
+window: 웹브라우저객체 --> 현재 페이지를 보여주는 웹브라우저의 최상위 객체
+document: dom 객체 dom의 최상위 객체
+
+bom(browser object model): 브라우저 환경 객체
+-->웹브라우저에서 기능을 사용
+--> window를 사용하지 않아도됨(default로 사용됨)
+bom의 주요 객체
+1.navigator
+-navigator.userAgent: 브라우저 정보
+-navigator.platform: 운영체제 정보
+2.location
+-location.herf: 현재 url 정보
+
+dom
+document.body.styled.background =red
+body태그의 배경스타일을 red로 변경
+
+자바스크립트로 html을 조작하기 위해서는 crud가 중요
+만들고 찾고, 조건에 안맞으면 수정 혹은 삭제
+
+
+html찾기
+id, class, tag, css selector로 찾기 등등 다양한 방법이 있다.
+document.getElementById(id)<--id로 찾기
+등등의 방법이 있다.
+
+찾은 html 요소 확인 / 수정하기
+element = document.getElementById()<--element는 찾은 태그의 내용
+element.innerText = new Text <-- 요소 내용확인/수정하기(태그 미포함)
+element.innerHTML = new Text <-- 요소 내용확인/수정하기(태그 포함)
+element.attribute = new Text <-- 요소의 attribute값 수정하기
+element.style.property = new Text <-- 요소의 css수정
+element.setAttribute = new Text <-- attribute값 설정하기
+
+
+html요소 생성/추가하기
+document.createElement(tagName) html요소 생성하기
+document.appendChild(tagName) html요소 추가하기
+
+html요소 삭제/대체하기
+document.removeChild(tagName) html요소 삭제하기
+document.replaceChild(new,old) html요소 대체하기
+
+html요소 탐색
+element.parentNode: 부모요소
+element.nextElementSibling: 현재요소의 다음 형제 요소
+element.prevElementSibling: 현재요소의 이전 형제 요소
+element.chidren: 자식 요소들(배열형태)
+
+
+---------------------------------------
+이벤트 : 웹페이지에서 발생하는 이벤트
+load: 로드가 완료되었을 때
+resize: 웹브라우저의 크기가 변했을 때
+
+이벤트 등록
+addEventListener()
+onCLick과 같이 직접 태그에 속성으로 특정 이벤트를 추가하는 방식도 있었으나,
+html과 css의 관계와 마찬가지로, 최근에는 html과 js의 역할을 분리하는 차원에서
+addEventListner()를 사용하는 방식을 권장함
+
+removeEventListener()를 통해 이벤트 삭제 가능(addEventListener와 같은 함수를 사용하여 제거가능)
+
+(element).addEventListener(event, function())
+(element).removeEventListener(event, function())
+
+fucntion은 바로 addEventListener에 넣는 것이 아니라 함수로 만든 후, 만든함수를 이벤트에 추가한다.

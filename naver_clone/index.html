@@ -92,15 +92,39 @@
         position: relative;
       }
 
-      #header-hamburger {
+      #header-hamburger,
+      #header-naverpay,
+      #header-notice,
+      #header-alerm,
+      #header-shopping {
         position: absolute;
-        top: 18px;
-        left: -10px;
+        width: 48px;
         display: inline-block;
         padding: 10px;
         background: none;
         border: none;
         cursor: pointer;
+      }
+
+      #header-hamburger {
+        top: 5px;
+        left: -12px;
+      }
+
+      #header-hamburger:hover::before,
+      #header-naverpay:hover::before,
+      #header-notice:hover::before,
+      #header-alerm:hover::before,
+      #header-shopping:hover::before {
+        content: "";
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        background-color: var(--color_option_bg);
+        border-radius: 50%;
+        z-index: 0;
       }
 
       #header-hamburger:hover::before {
@@ -115,17 +139,62 @@
         z-index: 0;
       }
 
-      #header-hamburger > div {
+      #header-hamburger > div,
+      #header-naverpay > div,
+      #header-notice > div,
+      #header-alerm > div,
+      #header-shopping > div {
         position: relative;
         z-index: 1;
         background-image: url(./sp_main.eae24523.png);
         background-size: 452px 436px;
-        background-position: -311px -166px;
         background-repeat: no-repeat;
-        width: 26px;
-        height: 26px;
+        width: 32px;
+        height: 32px;
       }
-      .blind {
+
+      #header-hamburger > div {
+        background-position: -311px -166px;
+        width: 32px;
+        height: 32px;
+      }
+      #header-naverpay {
+        top: 5px;
+        left: 41px;
+      }
+
+      #header-naverpay > div {
+        background-position: -248px -260px;
+        background-repeat: no-repeat;
+      }
+      #header-notice {
+        top: 5px;
+        right: 94px;
+      }
+
+      #header-notice > div {
+        background-position: -99px -316px;
+        background-repeat: no-repeat;
+      }
+      #header-alerm {
+        top: 5px;
+        right: 42px;
+      }
+
+      #header-alerm > div {
+        background-position: -311px -232px;
+        background-repeat: no-repeat;
+      }
+      #header-shopping {
+        top: 5px;
+        right: -10px;
+      }
+
+      #header-shopping > div {
+        background-position: -33px -316px;
+      }
+
+      #blind {
         position: absolute;
         clip: rect(0, 0, 0, 0);
         width: 1px;
@@ -140,6 +209,18 @@
       <div id="wrap-center">
         <div id="header">
           <button id="header-hamburger">
+            <div><span id="blind"> 확장영역 </span></div>
+          </button>
+          <button id="header-naverpay">
+            <div><span id="blind"> 확장영역 </span></div>
+          </button>
+          <button id="header-notice">
+            <div><span id="blind"> 확장영역 </span></div>
+          </button>
+          <button id="header-alerm">
+            <div><span id="blind"> 확장영역 </span></div>
+          </button>
+          <button id="header-shopping">
             <div><span id="blind"> 확장영역 </span></div>
           </button>
         </div>
